@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>قسم الألعاب في سوريا | Hamado Card</title>
+<meta name="description" content="صفحة قسم الألعاب في Hamado Card: فري فاير، ببجي، وباقات الألعاب - صفحة SEO مخصصة ومترابطة.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://hamadocard.com/games.html">
+<style>body{font-family:Cairo,sans-serif;background:#f5f5f5;margin:0}header,footer{background:#f57c00;color:#fff;padding:12px}main{max-width:900px;margin:auto;padding:16px}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px}.card{background:#fff;border-radius:12px;padding:12px}.links a{margin-left:8px;color:#fff}.muted{color:#666;font-size:13px}</style>
+</head>
+<body>
+<header><strong>🎮 قسم الألعاب</strong> <span class="links"><a href="/">الرئيسية</a><a href="/apps.html">التطبيقات</a><a href="/streaming-services.html">الاشتراكات</a><a href="/payment-services.html">الدفع</a></span></header>
+<main>
+<h1>قسم الألعاب</h1>
+<p class="muted">هذه صفحة مستقلة لتحسين الأرشفة والظهور، ومربوطة بواجهة الباك اند عبر WordPress Plugin.</p>
+<div id="products" class="grid"></div>
+</main>
+<footer>© Hamado Card</footer>
+<script>
+const API_BASE=(location.hostname==='localhost'||location.hostname==='127.0.0.1')?'http://localhost/wp-json/hamado/v1':location.origin+'/wp-json/hamado/v1';
+fetch(API_BASE+'/products/by-section/games').then(r=>r.json()).then(d=>{
+ const list=(d.products||[]); const el=document.getElementById('products');
+ el.innerHTML=list.map(p=>`<a class="card" href="/"><div>${p.icon||'🎮'} ${p.name}</div><b>$${p.price}</b></a>`).join('')||'<div class="card">لا توجد عناصر حالياً</div>';
+}).catch(()=>document.getElementById('products').innerHTML='<div class="card">تعذر تحميل البيانات</div>');
+</script>
+</body></html>
