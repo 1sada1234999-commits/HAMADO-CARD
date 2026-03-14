@@ -274,8 +274,8 @@ body { font-family:'Cairo',sans-serif; background:var(--dark); color:var(--text)
 //  CONFIG
 // ══════════════════════════════════════
 const API_BASE = (location.hostname === 'localhost' || location.hostname === '127.0.0.1')
-  ? 'http://localhost/wp-json/hamado/v1'
-  : location.origin + '/wp-json/hamado/v1';
+  ? 'http://localhost:3000/api'
+  : location.origin + '/api';
 
 // Admin credentials stored in localStorage (change on first login!)
 const ADMIN_KEY = 'hc_admin_session';

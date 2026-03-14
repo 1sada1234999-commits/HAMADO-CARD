@@ -1000,16 +1000,6 @@ header {
   </div>
 </div>
 
-  <!-- AdSense Banner -->
-  <div style="padding:8px 12px;text-align:center;overflow:hidden">
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-5506877998492189"
-         data-ad-slot="auto"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-  </div>
 
 <!-- QUICK LINKS BAR -->
 <div style="background:#fff;border-bottom:1px solid #e0e0e0;padding:8px 12px;overflow-x:auto;scrollbar-width:none">
@@ -2211,8 +2201,8 @@ header {
 const GOOGLE_CLIENT_ID = '760607005317-8ov3gvmcmhgi3trvf221161ggsne8a9o.apps.googleusercontent.com';
 
 const API_BASE = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
-  ? 'http://localhost/wp-json/hamado/v1'
-  : window.location.origin + '/wp-json/hamado/v1';
+  ? 'http://localhost:3000/api'
+  : window.location.origin + '/api';
 
 // ============================
 //  STATE
